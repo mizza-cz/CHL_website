@@ -96,6 +96,9 @@
   font-size: 56px;
   font-family: var(--titleFont);
   margin-bottom: 12px;
+  @include media-breakpoint-down(md) {
+    font-size: 40px;
+  }
 }
 .hex__title--medium {
   font-size: 40px;

@@ -12,12 +12,18 @@
   }
 
   &__inner {
-    margin-top: 124px;
+    margin-top: 100px;
   }
   .topPillar {
-    display: block;
+    display: block !important;
     position: relative;
     padding-bottom: 6rem;
+    cursor: pointer;
+  }
+  .topPillar__img {
+    margin: 0 auto;
+    img {
+    }
   }
   .topPillars {
     padding-bottom: 0;
@@ -62,7 +68,10 @@
       padding: 0 40px;
     }
   }
-
+  .slick-track {
+    display: flex;
+    align-items: flex-end;
+  }
   .slick-next {
     right: -6rem;
     @include media-breakpoint-down(xxl) {
@@ -78,6 +87,13 @@
 }
 
 .slider-nav .slick-active.slick-current .topPillar {
+  .topPillar__img {
+    height: 19rem;
+    width: 9rem;
+    img {
+      object-fit: cover;
+    }
+  }
   &::before {
     border: 20px solid transparent;
     border-bottom: 20px solid var(--color-ice);
