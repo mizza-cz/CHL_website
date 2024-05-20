@@ -3,9 +3,9 @@ $('.stories-section__slider').slick({
   centerPadding: '240px',
   slidesToShow: 3,
   prevArrow:
-    '<button class="slick-arrow slick-prev"><img src="/images/ico/prev.svg" loading="lazy" alt="" /></button>',
+    '<button class="slick-arrow slick-prev"><img src="images/ico/prev.svg" loading="lazy" alt="" /></button>',
   nextArrow:
-    '<button class="slick-arrow slick-next"><img src="/images/ico/next.svg" loading="lazy" alt="" /></button>',
+    '<button class="slick-arrow slick-next"><img src="images/ico/next.svg" loading="lazy" alt="" /></button>',
   responsive: [
     {
       breakpoint: 1320,
