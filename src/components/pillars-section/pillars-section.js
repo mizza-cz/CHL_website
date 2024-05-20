@@ -15,10 +15,46 @@ $(document).ready(function () {
     slidesToScroll: 1,
     asNavFor: '.slider-for',
     dots: false,
-    focusOnSelect: true, // Эта строка обеспечивает навигацию при клике на элементы навигации
+    focusOnSelect: true,
+    responsive: [
+      {
+        breakpoint: 1001,
+        settings: {
+          slidesToShow: 6,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 920,
+        settings: {
+          slidesToShow: 5,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToShow: 4,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 570,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 470,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+        },
+      },
+    ],
   });
 
-  // Добавляем обработчики кликов на элементы topPillar
   $('.topPillar').on('click', function () {
     var index = $(this).index();
     $('.slider-for').slick('slickGoTo', index);
