@@ -1,0 +1,31 @@
+.icon {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+
+  background-size: contain; /* Убедитесь, что изображение будет подгоняться под размеры */
+  background-repeat: no-repeat;
+}
+
+.icon-partnership {
+  background-image: url('../images/ico/partnership.svg');
+}
+
+.icon-participation {
+  background-image: url('../images/ico/participation.svg');
+}
+.icon-people {
+  background-image: url('../images/ico/people.svg');
+}
+.icon-planet {
+   background-image: url('../images/ico/planet.svg');
+ }
+ .icon-power {
+   background-image: url('../images/ico/power.svg');
+ }
+ .icon-profile {
+   background-image: url('../images/ico/profile.svg');
+ }
+ .icon-prosperity {
+   background-image: url('../images/ico/prosperity.svg');
+ }

@@ -1,0 +1,122 @@
+.digitalization-section {
+  background-image: url('../images/content/digi-bg.png');
+  background-repeat: no-repeat;
+  padding-bottom: 250px;
+  background-position: bottom left;
+  padding-top: 200px;
+  @include media-breakpoint-down(xxl) {
+    padding-top: 40px;
+    background-image: none;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @include media-breakpoint-down(xxl) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__content {
+    max-width: 600px;
+  }
+
+  .hexagons {
+    --s: 200px; /* control the size */
+    --g: 16px; /* control the gap */
+    display: grid;
+    width: fit-content;
+    margin-top: 120px;
+    margin-right: 26rem;
+    @include media-breakpoint-down(xxl) {
+      margin-top: 18rem;
+      margin-right: 10rem;
+    }
+  }
+
+  .hexagonItem {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 0.866;
+    object-fit: cover;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+    transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
+    transition: 0.2s linear;
+    background-color: #dcf3f4;
+    text-decoration: none;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    padding-top: 62px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    &__icon {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 12px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    &--img {
+      padding: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__title {
+      font-size: 12px;
+
+      line-height: 130%;
+    }
+  }
+
+  .hexagonItem:nth-child(1),
+  .hexagonItem:nth-child(8) {
+    --_x: calc(-50% - var(--g));
+  }
+  .hexagonItem:nth-child(9),
+  .hexagonItem:nth-child(2) {
+    --_x: calc(56% - var(--g));
+  }
+  .hexagonItem:nth-child(10),
+  .hexagonItem:nth-child(3) {
+    --_x: calc(162% - var(--g));
+  }
+
+  .hexagonItem:nth-child(4) {
+    --_x: calc(-102% - var(--g));
+  }
+  .hexagonItem:nth-child(5) {
+    --_x: calc(-1% - 0.5 * var(--g));
+  }
+  .hexagonItem:nth-child(6) {
+    --_x: calc(104% - 0.5 * var(--g));
+  }
+  .hexagonItem:nth-child(7) {
+    --_x: calc(209% - 0.5 * var(--g));
+  }
+
+  .hexagonItem:nth-child(1),
+  .hexagonItem:nth-child(2),
+  .hexagonItem:nth-child(3) {
+    --_y: calc(-77% - 0.87 * var(--g));
+  }
+
+  .hexagonItem:nth-child(7),
+  .hexagonItem:nth-child(4),
+  .hexagonItem:nth-child(5),
+  .hexagonItem:nth-child(6) {
+    --_y: calc(3% - 0.87 * var(--g));
+  }
+  .hexagonItem:nth-child(10),
+  .hexagonItem:nth-child(8),
+  .hexagonItem:nth-child(9) {
+    --_y: calc(83% - 0.87 * var(--g));
+  }
+}

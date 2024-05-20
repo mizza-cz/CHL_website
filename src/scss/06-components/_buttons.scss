@@ -1,0 +1,58 @@
+.btn {
+  background-color: var(--color-text);
+  border-radius: 8px;
+  width: fit-content;
+  padding: 10px 18px;
+  display: block;
+  border: 1px solid var(--color-text);
+  transition: all 0.3s;
+  color: var(--color-light);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: var(--color-light);
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+  }
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-left: 8px;
+  }
+  path {
+    transition: all 0.3s;
+  }
+  &:hover {
+    svg,
+    path {
+      stroke: var(--color-text) !important;
+    }
+  }
+}
+.btn-arrow {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-left: 8px;
+  }
+  path {
+    transition: all 0.3s;
+  }
+  &:hover {
+    svg,
+    path {
+      stroke: var(--color-text) !important;
+    }
+  }
+}

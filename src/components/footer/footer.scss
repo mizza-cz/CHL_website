@@ -1,0 +1,45 @@
+.footer {
+  margin: 100px auto;
+  @include media-breakpoint-down(xl) {
+    margin-bottom: 40px;
+  }
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  &__social a {
+    width: 20px;
+    height: 20px;
+    display: block;
+    transition: all 0.3s;
+  }
+  &__social a:hover {
+    transform: scale(1.1);
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+  &__links a {
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    &:hover {
+      text-decoration-color: inherit;
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  display: block;
+  color: #c3c3c3;
+}

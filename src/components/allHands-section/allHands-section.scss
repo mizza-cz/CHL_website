@@ -1,0 +1,95 @@
+.allHands-section {
+  margin-bottom: 200px;
+  padding-top: 120px;
+  @include media-breakpoint-down(xxl) {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @include media-breakpoint-down(xxl) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__content {
+    max-width: 600px;
+  }
+
+  .hexagons {
+    --s: 294px; /* control the size */
+    --g: 16px; /* control the gap */
+    display: grid;
+    width: fit-content;
+    margin-top: 172px;
+    margin-right: 300px;
+    @include media-breakpoint-down(xxl) {
+      margin-top: 21rem;
+      margin-right: 9rem;
+    }
+  }
+
+  .hexagonItem {
+    grid-area: 1/1;
+    width: var(--s);
+    aspect-ratio: 0.866;
+    object-fit: cover;
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0);
+    transform: translate(var(--_x, 0), var(--_y, 0)) scale(var(--_t, 1));
+    cursor: pointer;
+    transition: 0.2s linear;
+    background-color: #dcf3f4;
+    text-decoration: none;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    padding-top: 62px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    &__title {
+      font-family: var(--titleFont);
+      font-size: 24px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      line-height: 130%;
+      span {
+        display: block;
+        margin-bottom: 20px;
+      }
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+      margin-top: 20px;
+    }
+  }
+
+  .hexagonItem:hover {
+    background-color: #00ffff;
+    z-index: 1;
+    --_t: 1.2;
+  }
+
+  .hexagonItem:nth-child(1) {
+    --_y: calc(-77% - 0.87 * var(--g));
+    --_x: calc(-50% - var(--g));
+  }
+  .hexagonItem:nth-child(2) {
+    --_x: calc(56% - var(--g));
+
+    --_y: calc(-77% - 0.87 * var(--g));
+  }
+
+  .hexagonItem:nth-child(4) {
+    --_y: calc(3% - 0.87 * var(--g));
+    --_x: calc(109% - var(--g));
+  }
+  .hexagonItem:nth-child(3) {
+    --_x: calc(0% - 0.5 * var(--g));
+    --_y: calc(3% - 0.87 * var(--g));
+  }
+}
