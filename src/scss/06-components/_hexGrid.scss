@@ -109,6 +109,14 @@
 .hex {
   width: 232px; /* = (100-2) / 3 */
   padding-bottom: 29%; /* =  width / sin(60) */
+
+  p {
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
 }
 
 .hex__title {
