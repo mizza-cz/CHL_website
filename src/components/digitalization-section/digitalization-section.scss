@@ -74,6 +74,11 @@
 
       line-height: 130%;
     }
+    &:hover {
+      background-color: #00ffff;
+      z-index: 1;
+      --_t: 1.2;
+    }
   }
 
   .hexagonItem:nth-child(1),

@@ -36,6 +36,14 @@
       }
     }
   }
+  p a {
+    color: var(--color-red);
+    font-weight: 500;
+    text-decoration-color: transparent;
+    &:hover {
+      text-decoration-color: inherit;
+    }
+  }
   q {
     display: block;
     margin-bottom: 60px;
@@ -105,4 +113,7 @@ h6 {
   font-size: 24px;
   letter-spacing: 1px;
   line-height: 130%;
+  @include media-breakpoint-down(lg) {
+    font-size: 20px;
+  }
 }
