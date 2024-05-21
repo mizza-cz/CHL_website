@@ -4,6 +4,7 @@
   padding-bottom: 250px;
   background-position: bottom left;
   padding-top: 200px;
+  background-size: 70%;
   @include media-breakpoint-down(xxl) {
     padding-top: 40px;
     background-image: none;
