@@ -33,7 +33,11 @@
       margin-right: 10rem;
     }
   }
-
+  a.hexagonItem:hover {
+    background-color: #00ffff;
+    z-index: 1;
+    --_t: 1.2;
+  }
   .hexagonItem {
     grid-area: 1/1;
     width: var(--s);
@@ -73,11 +77,6 @@
       font-size: 12px;
 
       line-height: 130%;
-    }
-    &:hover {
-      background-color: #00ffff;
-      z-index: 1;
-      --_t: 1.2;
     }
   }
 
