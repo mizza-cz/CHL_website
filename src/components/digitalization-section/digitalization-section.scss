@@ -8,6 +8,8 @@
   @include media-breakpoint-down(xxl) {
     padding-top: 40px;
     background-image: none;
+  }
+  @include media-breakpoint-down(lg) {
     padding-bottom: 40rem;
   }
   &__inner {
