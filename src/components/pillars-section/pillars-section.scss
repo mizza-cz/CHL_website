@@ -22,15 +22,13 @@
   }
   .topPillar__img {
     margin: 0 auto;
-    img {
-    }
   }
   .topPillars {
     padding-bottom: 0;
   }
   &__slider {
     @include media-breakpoint-down(xxl) {
-      padding: 0 80px;
+      padding: 0 50px;
     }
   }
   &__slide {
@@ -41,6 +39,7 @@
     @include media-breakpoint-down(xxl) {
       padding-top: 40px;
       padding-bottom: 40px;
+      margin: 0 auto;
     }
   }
   &__slide-title {

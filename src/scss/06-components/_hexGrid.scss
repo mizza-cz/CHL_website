@@ -1,10 +1,8 @@
 /* Hexagons */
 #hexGrid {
   overflow: hidden;
-
   padding: 0.866% 0;
   width: 100%;
-
   @include media-breakpoint-only(md) {
     width: 46.25rem;
   }
@@ -25,16 +23,6 @@
   clear: both;
 }
 
-.hex {
-  position: relative;
-  list-style-type: none;
-  float: left;
-  overflow: hidden;
-  visibility: hidden;
-  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
-  transform: translateX(50%) rotate(-60deg) skewY(30deg) translatez(-1px);
-}
-
 .hex * {
   visibility: visible;
   outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
@@ -42,16 +30,20 @@
 
 .hexIn {
   position: absolute;
-  display: block;
   width: 100%;
   height: 100%;
   text-align: center;
-  color: #fff;
   overflow: hidden;
   transform: skewY(-30deg) rotate(60deg);
   background-color: var(--color-ice);
   padding-left: 16px;
   padding-right: 16px;
+
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 /*** SPACING AND SIZING *****************************************************************/
@@ -73,6 +65,72 @@
     transform: translateX(1%) rotate(-60deg) skewY(30deg);
   }
 }
+.hex:nth-child(5n + 4),
+.hex:nth-child(5n + 5) {
+  margin-top: -5.5%;
+  margin-bottom: -5.5%;
+  @include media-breakpoint-down(xxl) {
+    margin-bottom: -6.5%;
+  }
+}
+.hex:nth-child(5n + 2),
+.hex:nth-child(5n + 4) {
+  margin-right: 16px;
+  margin-left: 16px;
+}
+.hex:nth-child(5n + 1) {
+  margin-left: 0.5%;
+}
+
+.hex:nth-child(5n + 6) {
+  clear: left;
+}
+
+/// myStyle
+.hex {
+  width: 232px; /* = (100-2) / 3 */
+  padding-bottom: 29%; /* =  width / sin(60) */
+  position: relative;
+  list-style-type: none;
+  float: left;
+  overflow: hidden;
+  visibility: hidden;
+  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  transform: translateX(50%) rotate(-60deg) skewY(30deg) translatez(-1px);
+
+  @include media-breakpoint-down(xxl) {
+    padding-bottom: 36%;
+  }
+  @include media-breakpoint-down(md) {
+    width: 13.5rem;
+  }
+}
+
+.hex {
+  width: 232px; /* = (100-2) / 3 */
+  padding-bottom: 29%; /* =  width / sin(60) */
+}
+
+.hex__title {
+  font-size: 56px;
+  font-family: var(--titleFont);
+  margin-bottom: 12px;
+  @include media-breakpoint-down(md) {
+    font-size: 32px;
+  }
+}
+.hex__title--medium {
+  font-size: 40px;
+  @include media-breakpoint-down(md) {
+    font-size: 32px;
+  }
+}
+.hex__title--small {
+  font-size: 24px;
+}
+
+// ///////
+
 .hex:nth-child(5n + 4),
 .hex:nth-child(5n + 5) {
   margin-top: -5.5%;
@@ -109,22 +167,23 @@
 }
 .hex:nth-child(5n + 2),
 .hex:nth-child(5n + 4) {
-  margin-right: 16px;
-  margin-left: 16px;
+  @include media-breakpoint-down(md) {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
 }
 .hex:nth-child(5n + 1) {
-  margin-left: 0.5%;
+  @include media-breakpoint-down(md) {
+    margin-left: 0.5%;
+  }
 }
 
-.hex:nth-child(5n + 6) {
-  clear: left;
-}
 .hex:nth-child(5n + 6) {
   @include media-breakpoint-down(md) {
     transform: translateX(100%) rotate(-60deg) skewY(30deg) !important;
   }
 }
-/// media
+//  /// media
 .hex:nth-child(5n + 1),
 .hex:nth-child(5n + 2) {
   @include media-breakpoint-down(md) {
@@ -132,42 +191,8 @@
   }
 }
 .hex:nth-child(5n + 3) {
-  transform: translateX(98%) rotate(-60deg) skewY(30deg);
-  margin-top: -40px;
-}
-
-/// myStyle
-.hex {
-  width: 232px; /* = (100-2) / 3 */
-  padding-bottom: 29%; /* =  width / sin(60) */
-  @include media-breakpoint-down(xxl) {
-    padding-bottom: 36%;
-  }
   @include media-breakpoint-down(md) {
-    width: 13.5rem;
+    transform: translateX(98%) rotate(-60deg) skewY(30deg);
+    margin-top: -40px;
   }
-}
-.hexIn {
-  color: var(--color-text);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.hex__title {
-  font-size: 56px;
-  font-family: var(--titleFont);
-  margin-bottom: 12px;
-  @include media-breakpoint-down(md) {
-    font-size: 32px;
-  }
-}
-.hex__title--medium {
-  font-size: 40px;
-  @include media-breakpoint-down(md) {
-    font-size: 32px;
-  }
-}
-.hex__title--small {
-  font-size: 24px;
 }
