@@ -14,9 +14,14 @@
     margin-top: 32px;
     margin-bottom: 20px;
   }
+  h4 {
+    margin-bottom: 16px;
+    margin-top: 24px;
+  }
   img {
     margin-bottom: 48px;
   }
+
   ul {
     margin-top: 20px;
     li + li {
@@ -29,10 +34,41 @@
         content: '';
         background-color: var(--color-text);
         position: absolute;
-        top: 10px;
+        top: 7px;
         left: 0;
         width: 8px;
         height: 8px;
+      }
+    }
+  }
+  ol {
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+
+    margin-top: 20px;
+    counter-reset: item;
+
+    > li {
+      counter-increment: item;
+      position: relative;
+      padding-left: 32px;
+      &::before {
+        content: counter(item) ')';
+        color: var(--color-primary);
+        font-weight: 700;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      > ol {
+        margin: 16px 0 0;
+        > li {
+          &::before {
+            content: counter(item) '.';
+          }
+        }
       }
     }
   }
@@ -115,5 +151,15 @@ h6 {
   line-height: 130%;
   @include media-breakpoint-down(lg) {
     font-size: 20px;
+  }
+}
+
+.o-content h4,
+.h4 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 130%;
+  @include media-breakpoint-down(lg) {
+    font-size: 18px;
   }
 }
