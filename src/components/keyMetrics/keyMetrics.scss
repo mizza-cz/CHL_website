@@ -7,6 +7,9 @@
   @include media-breakpoint-down(xxl) {
     background-image: none;
   }
+  @include media-breakpoint-down(md) {
+    padding-top: 60px;
+  }
   &__inner {
     display: flex;
     @include media-breakpoint-down(xxl) {

@@ -1,13 +1,54 @@
 .timeline {
   white-space: nowrap;
   overflow-x: hidden;
+  max-width: 1920px;
+  padding: 0 32px;
+  margin: 0 auto;
+  position: relative;
+  &__list {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    margin: 0 120px;
+    @include media-breakpoint-down(lg) {
+      margin: 0 2.5rem;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 200px;
+      z-index: 1;
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      right: -0;
+      z-index: 1;
+      transform: rotate(180deg);
+      top: -25px;
+      height: 100%;
+      width: 12.5rem;
+      background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    }
+  }
 }
 
 .timeline ol {
   font-size: 0;
   width: 100vw;
-  padding: 250px 0;
   transition: all 1s;
+  padding-top: 100px;
+  padding-bottom: 200px;
+
+  transform: translateX(-1140px);
+  @include media-breakpoint-down(xxl) {
+    transform: translateX(-90rem);
+  }
 }
 
 .timeline ol li {
@@ -15,50 +56,11 @@
   display: inline-block;
   list-style-type: none;
   width: 160px;
-  height: 3px;
-  background: #fff;
+  height: 8px;
 }
 
 .timeline ol li:last-child {
   width: 280px;
-}
-
-.timeline ol li:not(:first-child) {
-  margin-left: 14px;
-}
-
-.timeline ol li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 1px);
-  bottom: 0;
-  width: 12px;
-  height: 12px;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background: #f45b69;
-}
-
-.timeline ol li div {
-  position: absolute;
-  left: calc(100% + 7px);
-  width: 280px;
-  padding: 15px;
-  font-size: 1rem;
-  white-space: normal;
-  color: black;
-  background: white;
-}
-
-.timeline ol li div::before {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
 }
 
 .timeline ol li:nth-child(odd) div {
@@ -66,126 +68,12 @@
   transform: translateY(-100%);
 }
 
-.timeline ol li:nth-child(odd) div::before {
-  top: 100%;
-  border-width: 8px 8px 0 0;
-  border-color: white transparent transparent transparent;
-}
-
 .timeline ol li:nth-child(even) div {
   top: calc(100% + 16px);
 }
 
-.timeline ol li:nth-child(even) div::before {
-  top: -8px;
-  border-width: 8px 0 0 8px;
-  border-color: transparent transparent transparent white;
-}
-
-.timeline time {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-/* TIMELINE ARROWS
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.timeline .arrows {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.timeline .arrows .arrow__prev {
-  margin-right: 20px;
-}
-
-.timeline .disabled {
-  opacity: 0.5;
-}
-
-.timeline .arrows img {
-  width: 45px;
-  height: 45px;
-}
-
-/* GENERAL MEDIA QUERIES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media screen and (max-width: 599px) {
-  .timeline ol,
-  .timeline ol li {
-    width: auto;
-  }
-
-  .timeline ol {
-    padding: 0;
-    transform: none !important;
-  }
-
-  .timeline ol li {
-    display: block;
-    height: auto;
-    background: transparent;
-  }
-
-  .timeline ol li:first-child {
-    margin-top: 25px;
-  }
-
-  .timeline ol li:not(:first-child) {
-    margin-left: auto;
-  }
-
-  .timeline ol li div {
-    position: static;
-    width: 94%;
-    height: auto !important;
-    margin: 0 auto 25px;
-  }
-
-  .timeline ol li:nth-child(odd) div {
-    transform: none;
-  }
-
-  .timeline ol li:nth-child(odd) div::before,
-  .timeline ol li:nth-child(even) div::before {
-    left: 50%;
-    top: 100%;
-    transform: translateX(-50%);
-    border: none;
-    border-left: 1px solid white;
-    height: 25px;
-  }
-
-  .timeline ol li:last-child,
-  .timeline ol li:nth-last-child(2) div::before,
-  .timeline ol li:not(:last-child)::after,
-  .timeline .arrows {
-    display: none;
-  }
-}
-
-/* FOOTER STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-footer {
-  position: fixed;
-  right: 0;
-  bottom: 20px;
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  color: black;
-  background: rgba(255, 255, 255, 0.65);
-}
-
-.page-footer a {
-  display: flex;
-  margin-left: 4px;
-}
-
 .milestones-section {
+  margin-bottom: 40px;
   &__title {
     display: flex;
     align-items: center;
@@ -202,4 +90,107 @@
 
 .color-gray {
   color: #d2ccd2;
+}
+/* TIMELINE ARROWS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: var(--color-ice);
+  border: none;
+  outline: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  top: 50px;
+  cursor: pointer;
+  z-index: 4;
+  @include media-breakpoint-down(lg) {
+    width: 40px;
+    height: 40px;
+    img {
+      width: 12px;
+      height: 12px;
+      object-fit: contain;
+    }
+  }
+}
+
+.timeline .arrow__prev {
+  left: 32px;
+  @include media-breakpoint-down(lg) {
+    left: 20px;
+  }
+}
+.timeline .arrow__next {
+  right: 32px;
+  @include media-breakpoint-down(lg) {
+    right: 20px;
+  }
+}
+
+.timeline .disabled {
+  opacity: 0.5;
+}
+
+/// timeline
+.timeline__achiev {
+  background-color: #d2ccd2;
+  a {
+    background-color: var(--color-text);
+    border: 6px solid #d2ccd2;
+  }
+}
+.timeline__looking {
+  background-color: var(--color-text);
+  a {
+    background-color: #d2ccd2;
+    border: 6px solid var(--color-text);
+  }
+}
+.timeline__achiev--last {
+  &::before {
+    content: '';
+    position: absolute;
+    right: -100px;
+    background-color: #d2ccd2;
+    width: 5rem;
+    height: 8px;
+    z-index: 1;
+  }
+}
+.timeline ol li:not(:first-child) {
+  margin-left: 24px;
+}
+
+.timeline ol li:not(:last-child) a {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 1px);
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 2;
+  display: block;
+}
+
+.timeline ol li div {
+  position: absolute;
+  left: 56px;
+  width: 14.5rem;
+  padding: 0.9375rem;
+  font-size: 1rem;
+  white-space: normal;
+  color: black;
+  background: white;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  height: fit-content !important;
 }

@@ -58,6 +58,7 @@
     flex-wrap: wrap;
     gap: 40px 0;
     justify-content: center;
+    padding-bottom: 4rem;
   }
 }
 .topPillar {
@@ -65,6 +66,10 @@
     position: relative;
     width: 10.75rem;
     height: 16rem;
+    @include media-breakpoint-down(lg) {
+      height: 12rem;
+      width: 8rem;
+    }
     img {
       display: block;
       width: 100%;
@@ -79,11 +84,19 @@
     right: 0;
     margin: 0 auto;
     position: absolute;
+    @include media-breakpoint-down(lg) {
+      width: 28px;
+      height: 28px;
+      top: 12px;
+    }
   }
   &__name {
     font-size: 14px;
     font-weight: 600;
     text-align: center;
     margin-top: -38px;
+    @include media-breakpoint-down(lg) {
+      margin-top: -28px;
+    }
   }
 }

@@ -4,8 +4,18 @@
 
   padding: 0.866% 0;
   width: 100%;
-  @include media-breakpoint-down(xxl) {
+
+  @include media-breakpoint-only(md) {
     width: 46.25rem;
+  }
+  @include media-breakpoint-only(xl) {
+    width: 46.25rem;
+  }
+  @include media-breakpoint-only(lg) {
+    width: 46.25rem;
+  }
+  @include media-breakpoint-down(md) {
+    width: 41rem;
   }
 }
 
@@ -52,7 +62,14 @@
 .hex:nth-child(5n + 3),
 .hex:nth-child(5n + 2) {
   transform: translateX(0%) rotate(-60deg) skewY(30deg);
-  @include media-breakpoint-down(xxl) {
+
+  @include media-breakpoint-only(xl) {
+    transform: translateX(1%) rotate(-60deg) skewY(30deg);
+  }
+  @include media-breakpoint-only(lg) {
+    transform: translateX(1%) rotate(-60deg) skewY(30deg);
+  }
+  @include media-breakpoint-only(md) {
     transform: translateX(1%) rotate(-60deg) skewY(30deg);
   }
 }
@@ -60,8 +77,34 @@
 .hex:nth-child(5n + 5) {
   margin-top: -5.5%;
   margin-bottom: -5.5%;
-  @include media-breakpoint-down(xxl) {
+
+  @include media-breakpoint-only(xl) {
     margin-bottom: -6.5%;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: -6.5%;
+  }
+  @include media-breakpoint-only(md) {
+    margin-bottom: -6.5%;
+  }
+  @include media-breakpoint-down(md) {
+    transform: translateX(47%) rotate(-60deg) skewY(30deg) translatez(-1px);
+  }
+}
+
+.hex:nth-child(5n + 4) {
+  @include media-breakpoint-down(md) {
+    margin-top: 140px;
+  }
+}
+.hex:nth-child(5n + 7) {
+  @include media-breakpoint-down(md) {
+    margin-top: 12rem;
+  }
+}
+.hex:nth-child(5n + 5) {
+  @include media-breakpoint-down(md) {
+    margin-top: -11rem;
   }
 }
 .hex:nth-child(5n + 2),
@@ -76,13 +119,32 @@
 .hex:nth-child(5n + 6) {
   clear: left;
 }
+.hex:nth-child(5n + 6) {
+  @include media-breakpoint-down(md) {
+    transform: translateX(100%) rotate(-60deg) skewY(30deg) !important;
+  }
+}
+/// media
+.hex:nth-child(5n + 1),
+.hex:nth-child(5n + 2) {
+  @include media-breakpoint-down(md) {
+    transform: translateX(47%) rotate(-60deg) skewY(30deg);
+  }
+}
+.hex:nth-child(5n + 3) {
+  transform: translateX(98%) rotate(-60deg) skewY(30deg);
+  margin-top: -40px;
+}
 
 /// myStyle
 .hex {
   width: 232px; /* = (100-2) / 3 */
   padding-bottom: 29%; /* =  width / sin(60) */
   @include media-breakpoint-down(xxl) {
-    padding-bottom: 35%;
+    padding-bottom: 36%;
+  }
+  @include media-breakpoint-down(md) {
+    width: 13.5rem;
   }
 }
 .hexIn {
@@ -97,11 +159,14 @@
   font-family: var(--titleFont);
   margin-bottom: 12px;
   @include media-breakpoint-down(md) {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 .hex__title--medium {
   font-size: 40px;
+  @include media-breakpoint-down(md) {
+    font-size: 32px;
+  }
 }
 .hex__title--small {
   font-size: 24px;
