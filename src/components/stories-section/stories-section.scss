@@ -4,6 +4,10 @@
   background-repeat: no-repeat;
   padding-bottom: 140px;
   padding-top: 140px;
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
   &__slider {
     display: flex;
     gap: 20px;

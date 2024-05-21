@@ -16,6 +16,11 @@
 
   &__inner {
     margin-top: 100px;
+    .container-medium {
+      @include media-breakpoint-down(md) {
+        padding: 0;
+      }
+    }
   }
   .topPillar {
     display: block !important;
@@ -35,8 +40,17 @@
     padding-bottom: 0;
   }
   &__slider {
-    @include media-breakpoint-down(xxl) {
-      padding: 0 50px;
+    @include media-breakpoint-only(xl) {
+      padding: 0 80px;
+    }
+    @include media-breakpoint-only(lg) {
+      padding: 0 80px;
+    }
+    @include media-breakpoint-only(md) {
+      padding: 0 60px;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 0;
     }
     .slick-slide {
       height: 0 !important;
@@ -66,14 +80,11 @@
     @include media-breakpoint-down(xxl) {
       margin-bottom: 40px;
     }
+    @include media-breakpoint-down(lg) {
+      font-size: 32px;
+    }
   }
-  &__slide-subtitle {
-    font-family: var(--titleFont);
-    font-size: 24px;
-    letter-spacing: 0.5px;
-    margin-bottom: 20px;
-    margin-top: 32px;
-  }
+
   &__slide-content {
     max-width: 740px;
     margin: 0 auto;
@@ -120,7 +131,13 @@
     right: 0;
     width: fit-content;
     margin: 0 auto;
-    @include media-breakpoint-down(xxl) {
+    @include media-breakpoint-only(xl) {
+      display: none;
+    }
+    @include media-breakpoint-only(lg) {
+      display: none;
+    }
+    @include media-breakpoint-only(md) {
       display: none;
     }
   }

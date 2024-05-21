@@ -8,6 +8,14 @@ $(document).ready(function () {
       '<button class="slick-arrow slick-next"><img src="images/ico/next.svg" loading="lazy" alt="" /></button>',
     fade: true,
     asNavFor: '.slider-nav',
+    responsive: [
+      {
+        breakpoint: 720,
+        settings: {
+          arrows: false,
+        },
+      },
+    ],
   });
 
   $('.slider-nav').slick({

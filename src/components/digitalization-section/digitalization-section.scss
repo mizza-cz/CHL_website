@@ -32,11 +32,20 @@
       margin-top: 18rem;
       margin-right: 10rem;
     }
+    @include media-breakpoint-down(lg) {
+      --s: 160px;
+    }
   }
   a.hexagonItem:hover {
     background-color: #00ffff;
     z-index: 1;
     --_t: 1.2;
+  }
+  a.hexagonItem {
+    @include media-breakpoint-down(lg) {
+      padding: 24px;
+      justify-content: center;
+    }
   }
   .hexagonItem {
     grid-area: 1/1;
@@ -55,6 +64,7 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+
     &__icon {
       width: 64px;
       height: 64px;
