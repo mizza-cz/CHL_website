@@ -39,7 +39,7 @@
       margin-right: 9rem;
     }
     @include media-breakpoint-down(md) {
-      --s: 180px;
+      --s: 160px;
       margin-top: 14rem;
       margin-right: 5rem;
     }
@@ -64,7 +64,7 @@
     flex-direction: column;
     text-align: center;
     @include media-breakpoint-down(md) {
-      padding: 24px 16px;
+      padding: 24px 12px 16px;
       justify-content: center;
     }
     p {
@@ -95,6 +95,9 @@
       height: 20px;
       display: block;
       margin-top: 20px;
+      @include media-breakpoint-down(md) {
+        margin-top: 12px;
+      }
     }
   }
 
@@ -106,20 +109,19 @@
 
   .hexagonItem:nth-child(1) {
     --_y: calc(-77% - 0.87 * var(--g));
-    --_x: calc(-50% - var(--g));
+    --_x: calc(-45% - var(--g));
   }
   .hexagonItem:nth-child(2) {
-    --_x: calc(56% - var(--g));
-
+    --_x: calc(61% - var(--g));
     --_y: calc(-77% - 0.87 * var(--g));
   }
 
   .hexagonItem:nth-child(4) {
     --_y: calc(3% - 0.87 * var(--g));
-    --_x: calc(109% - var(--g));
+    --_x: calc(115% - var(--g));
   }
   .hexagonItem:nth-child(3) {
-    --_x: calc(0% - 0.5 * var(--g));
+    --_x: calc(3% - 0.5 * var(--g));
     --_y: calc(3% - 0.87 * var(--g));
   }
 }
