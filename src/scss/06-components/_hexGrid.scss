@@ -102,14 +102,8 @@
     padding-bottom: 36%;
   }
   @include media-breakpoint-down(md) {
-    width: 13.5rem;
+    width: 13rem;
   }
-}
-
-.hex {
-  width: 232px; /* = (100-2) / 3 */
-  padding-bottom: 29%; /* =  width / sin(60) */
-
   p {
     @include media-breakpoint-down(md) {
       font-size: 14px;
@@ -124,13 +118,14 @@
   font-family: var(--titleFont);
   margin-bottom: 12px;
   @include media-breakpoint-down(md) {
-    font-size: 32px;
+    font-size: 24px;
+    margin-bottom: 6px;
   }
 }
 .hex__title--medium {
   font-size: 40px;
   @include media-breakpoint-down(md) {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 .hex__title--small {
@@ -154,18 +149,21 @@
     margin-bottom: -6.5%;
   }
   @include media-breakpoint-down(md) {
-    transform: translateX(47%) rotate(-60deg) skewY(30deg) translatez(-1px);
+    transform: translateX(50%) rotate(-60deg) skewY(30deg) translatez(-1px);
   }
 }
 
 .hex:nth-child(5n + 4) {
   @include media-breakpoint-down(md) {
-    margin-top: 140px;
+    margin-top: 152px;
   }
 }
 .hex:nth-child(5n + 7) {
   @include media-breakpoint-down(md) {
-    margin-top: 12rem;
+    margin-top: 2px;
+    -webkit-transform: translateX(0%) rotate(-60deg) skewY(30deg) !important;
+    transform: translateX(-5%) rotate(-60deg) skewY(30deg) !important;
+    margin-bottom: 56px;
   }
 }
 .hex:nth-child(5n + 5) {
@@ -188,19 +186,26 @@
 
 .hex:nth-child(5n + 6) {
   @include media-breakpoint-down(md) {
-    transform: translateX(100%) rotate(-60deg) skewY(30deg) !important;
+    transform: translateX(50%) rotate(-60deg) skewY(30deg) !important;
+    margin-top: -12rem;
   }
 }
 //  /// media
 .hex:nth-child(5n + 1),
 .hex:nth-child(5n + 2) {
   @include media-breakpoint-down(md) {
-    transform: translateX(47%) rotate(-60deg) skewY(30deg);
+    transform: translateX(50%) rotate(-60deg) skewY(30deg);
   }
 }
 .hex:nth-child(5n + 3) {
   @include media-breakpoint-down(md) {
-    transform: translateX(98%) rotate(-60deg) skewY(30deg);
-    margin-top: -40px;
+    transform: translateX(104%) rotate(-60deg) skewY(30deg);
+    margin-top: -43px;
+  }
+}
+
+.hex:nth-child(5n + 8) {
+  @include media-breakpoint-down(md) {
+    transform: translateX(103%) rotate(-60deg) skewY(30deg) !important;
   }
 }
