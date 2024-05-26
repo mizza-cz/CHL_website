@@ -59,9 +59,31 @@
     gap: 40px 0;
     justify-content: center;
     padding-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include media-breakpoint-only(xl) {
+    max-width: 760px;
+  }
+  @include media-breakpoint-only(md) {
+    max-width: 620px;
+  }
+  @include media-breakpoint-only(sm) {
+    max-width: 620px;
+  }
+  @include media-breakpoint-only(lg) {
+    max-width: 760px;
   }
 }
 .topPillar {
+  @include media-breakpoint-down(xxl) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+  }
+
   &__img {
     position: relative;
     width: 10.75rem;
