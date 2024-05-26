@@ -14,7 +14,7 @@
   }
   @include media-breakpoint-down(md) {
     width: 100%;
-    margin-bottom: -260%;
+    margin-bottom: -270%;
   }
 }
 
@@ -46,10 +46,6 @@
   justify-content: center;
   flex-direction: column;
 }
-
-/*** SPACING AND SIZING *****************************************************************/
-
-/* <- 2-3  hexagons per row */
 
 .hex:nth-child(5n + 1),
 .hex:nth-child(5n + 3),
