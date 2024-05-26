@@ -116,6 +116,10 @@
   .topPillar__img {
     height: 19rem;
     width: 9rem;
+    @include media-breakpoint-down(lg) {
+      height: 14rem;
+      width: 7rem;
+    }
     img {
       object-fit: cover;
     }

@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
   $('.slider-for').slick({
     slidesToShow: 1,
@@ -21,7 +23,6 @@ $(document).ready(function () {
   $('.slider-nav').slick({
     slidesToShow: 7,
     slidesToScroll: 1,
-
     asNavFor: '.slider-for',
     dots: false,
     focusOnSelect: true,
@@ -64,8 +65,21 @@ $(document).ready(function () {
     ],
   });
 
+  var slideIds = [
+    '#slide-partnership',
+    '#slide-participation',
+    '#slide-people',
+    '#slide-planet',
+    '#slide-power',
+    '#slide-profile',
+    '#slide-prosperity',
+  ];
+
   $('.topPillar').on('click', function () {
-    var index = $(this).index();
-    $('.slider-for').slick('slickGoTo', index);
+    var id = $(this).attr('id');
+    var index = slideIds.indexOf('#' + id.replace('pillar', 'slide'));
+    if (index !== -1) {
+      $('.slider-for').slick('slickGoTo', index);
+    }
   });
 });
