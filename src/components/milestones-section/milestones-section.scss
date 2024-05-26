@@ -15,7 +15,7 @@
     margin: 0 120px;
     @include media-breakpoint-down(lg) {
       margin: 0;
-      padding-top: 40px;
+      margin-bottom: 40px;
     }
     &::after {
       content: '';
@@ -55,7 +55,9 @@
   transition: all 1s;
   padding-top: 100px;
   padding-bottom: 200px;
-
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 4rem;
+  }
   // transform: translateX(-83.25rem);
   // @include media-breakpoint-down(xxl) {
   //   transform: translateX(-100rem);
@@ -68,6 +70,9 @@
   list-style-type: none;
   width: 160px;
   height: 8px;
+  @include media-breakpoint-down(lg) {
+    width: 15rem;
+  }
 }
 
 .timeline ol li:last-child {
@@ -81,6 +86,10 @@
 
 .timeline ol li:nth-child(even) div {
   top: calc(100% + 16px);
+  @include media-breakpoint-down(lg) {
+    top: -16px;
+    transform: translateY(-100%);
+  }
 }
 
 .milestones-section {
@@ -147,7 +156,8 @@
   }
   @include media-breakpoint-down(lg) {
     left: -48px;
-    top: -28px;
+    top: auto;
+    bottom: -40px;
     right: 0;
     margin: 0 auto;
   }
@@ -163,7 +173,8 @@
   @include media-breakpoint-down(lg) {
     right: -48px;
     left: 0;
-    top: -28px;
+    top: auto;
+    bottom: -40px;
     margin: 0 auto;
   }
 }
@@ -196,10 +207,16 @@
     width: 5rem;
     height: 8px;
     z-index: 1;
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
   }
 }
 .timeline ol li:not(:first-child) {
   margin-left: 24px;
+  @include media-breakpoint-down(lg) {
+    margin: 0;
+  }
 }
 
 .timeline ol li:not(:last-child) a {
@@ -214,6 +231,11 @@
   border-radius: 50%;
   z-index: 2;
   display: block;
+  @include media-breakpoint-down(lg) {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 }
 
 .timeline ol li div {
@@ -229,4 +251,9 @@
   display: flex;
   align-items: flex-end;
   height: fit-content !important;
+  @include media-breakpoint-down(lg) {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 }
