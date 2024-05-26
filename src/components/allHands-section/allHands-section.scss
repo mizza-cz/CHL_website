@@ -30,6 +30,12 @@
       margin-top: 21rem;
       margin-right: 9rem;
     }
+    @include media-breakpoint-only(sm) {
+      margin-right: 9rem;
+      padding-bottom: 120px;
+      justify-content: center;
+      margin-top: 12rem;
+    }
     @include media-breakpoint-only(xl) {
       margin-top: 21rem;
       margin-right: 9rem;
@@ -40,10 +46,14 @@
     }
     @include media-breakpoint-down(md) {
       --s: 100%;
-      margin-top: 12rem;
-      margin-right: 0;
+
       width: 100%;
-      padding-bottom: 120px;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-right: 0;
+      margin-top: 60%;
+      width: 100%;
+      padding-bottom: 36%;
     }
   }
 
@@ -68,7 +78,12 @@
     @include media-breakpoint-down(md) {
       padding: 10px 10px 10px;
       justify-content: center;
+    }
+    @include media-breakpoint-down(sm) {
       max-width: 49%;
+    }
+    @include media-breakpoint-only(sm) {
+      max-width: 154px;
     }
     p {
       @include media-breakpoint-down(md) {
@@ -100,7 +115,7 @@
       display: block;
       margin-top: 20px;
       @include media-breakpoint-down(md) {
-        margin-top: 12px;
+        margin-top: 10px;
       }
     }
   }
@@ -113,20 +128,35 @@
 
   .hexagonItem:nth-child(1) {
     --_y: calc(-77% - 0.87 * var(--g));
-    --_x: calc(62% - var(--g));
+    --_x: calc(-50% - var(--g));
+    @include media-breakpoint-down(md) {
+      --_y: calc(-77% - 0.87 * var(--g));
+      --_x: calc(62% - var(--g));
+    }
   }
   .hexagonItem:nth-child(2) {
-    --_x: calc(10% - var(--g));
-    // --_y: calc(-77% - 0.87 * var(--g));
-    --_y: calc(3% - 0.87 * var(--g));
+    --_x: calc(56% - var(--g));
+    --_y: calc(-77% - 0.87 * var(--g));
+    @include media-breakpoint-down(md) {
+      --_x: calc(10% - var(--g));
+      --_y: calc(3% - 0.87 * var(--g));
+    }
   }
 
   .hexagonItem:nth-child(4) {
-    --_y: calc(82% - 0.87 * var(--g));
-    --_x: calc(62% - var(--g));
+    --_y: calc(3% - 0.87 * var(--g));
+    --_x: calc(109% - var(--g));
+    @include media-breakpoint-down(md) {
+      --_y: calc(82% - 0.87 * var(--g));
+      --_x: calc(62% - var(--g));
+    }
   }
   .hexagonItem:nth-child(3) {
-    --_x: calc(109% - 0.5 * var(--g));
+    --_x: calc(0% - 0.5 * var(--g));
     --_y: calc(3% - 0.87 * var(--g));
+    @include media-breakpoint-down(md) {
+      --_x: calc(109% - 0.5 * var(--g));
+      --_y: calc(3% - 0.87 * var(--g));
+    }
   }
 }
