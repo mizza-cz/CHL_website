@@ -1,7 +1,8 @@
 .article {
   padding-bottom: 80px;
   border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0), 0px 10px 24px rgba(0, 0, 0, 0.052092);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0),
+    0px 10px 24px rgba(0, 0, 0, 0.052092);
   opacity: 1;
   overflow: hidden;
   @include media-breakpoint-down(md) {
@@ -19,7 +20,12 @@
       object-fit: cover;
     }
   }
-
+  .btn {
+    color: var(--color-light) !important;
+    &:hover {
+      color: var(--color-dark) !important;
+    }
+  }
   &__header {
     padding-left: 93px;
     padding-right: 93px;
