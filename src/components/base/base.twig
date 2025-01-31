@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title>{{ title }} - {{ project }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <meta name="format-detection" content="telephone=no" />
 
     <!-- fonts  -->
@@ -27,7 +30,20 @@
     <link rel="preload" href="js/scripts.js" as="script" />
 
     <!-- favicon -->
-
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
     <!-- favicon end-->
   </head>
   <body>
@@ -36,7 +52,9 @@
         {% include "@components/header/header.twig" %} {% include
         "@components/topSection/topSection.twig" %}
       </div>
-      <main class="main" aria-label="Hlavní obsah">{% block main %}{% endblock %}</main>
+      <main class="main" aria-label="Hlavní obsah">
+        {% block main %}{% endblock %}
+      </main>
       {% include "@components/footer/footer.twig" %}
     </div>
     <script
