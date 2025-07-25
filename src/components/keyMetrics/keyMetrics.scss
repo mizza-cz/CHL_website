@@ -1,7 +1,7 @@
 .keyMetrics {
   padding-top: 180px;
   padding-bottom: 200px;
-  background-image: url('../images/content/bg-key.png');
+  background-image: url("../images/content/bg-key.png");
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: 80%;
@@ -15,10 +15,13 @@
   }
   &__inner {
     display: flex;
+    justify-content: space-between;
+    gap: 40px;
     @include media-breakpoint-down(xxl) {
       flex-direction: column-reverse;
       justify-content: center;
       align-items: center;
+      gap: 0;
     }
     @include media-breakpoint-down(md) {
       overflow: hidden;

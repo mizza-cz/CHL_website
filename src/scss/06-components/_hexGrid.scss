@@ -1,23 +1,150 @@
+// /* Hexagons */
+// #hexGrid {
+//   width: 100%;
+//   max-width: 49rem;
+// }
+// #hexGrid:after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+
+// .hex * {
+//   visibility: visible;
+//   outline: 1px solid transparent; /* fix jagged edges в FF */
+// }
+
+// .hexIn {
+//   text-align: center;
+//   overflow: hidden;
+//   transform: skewY(-30deg) rotate(60deg);
+//   background-color: var(--color-ice);
+//   padding: 0 16px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-direction: column;
+//   width: 100%;
+//   height: 100%;
+//   color: var(--color-text);
+// }
+
+// /* Строки */
+// .hex-row {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 24px;
+//   justify-content: center;
+
+//   @include media-breakpoint-down(md) {
+//     gap: 1rem;
+//   }
+// }
+// .hex-row + .hex-row {
+//   .hex {
+//     margin-top: -3.25rem;
+//   }
+// }
+
+// /* Базовые стили плиток */
+// .hex {
+//   width: 100%;
+//   position: relative;
+//   list-style: none;
+//   overflow: hidden;
+//   visibility: hidden;
+//   outline: 1px solid transparent;
+//   transform: rotate(-60deg) skewY(30deg) translateZ(-1px);
+//   aspect-ratio: 224/260;
+//   margin-top: -4.4rem;
+
+//   p {
+//     @include media-breakpoint-down(md) {
+//       font-size: 11px;
+//       padding: 0 8px;
+//       text-overflow: ellipsis;
+//       overflow: hidden;
+//       display: -webkit-box;
+//       -webkit-line-clamp: 3;
+//       -webkit-box-orient: vertical;
+//     }
+//   }
+// }
+
+// .hex__title {
+//   font-family: var(--titleFont);
+//   margin-bottom: 12px;
+//   font-size: 56px;
+
+//   @include media-breakpoint-down(md) {
+//     font-size: 16px !important;
+//     margin-bottom: 6px;
+//   }
+// }
+// .hex__title--medium {
+//   font-size: 40px;
+//   @include media-breakpoint-down(md) {
+//     font-size: 20px;
+//   }
+// }
+// .hex__title--small {
+//   font-size: 20px;
+// }
+
+// /* Основной грид (desktop: 3-2-3-2…) */
+// .hexGrid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 24px;
+//   justify-content: center;
+//   @include media-breakpoint-down(md) {
+//     gap: 16px;
+//   }
+// }
+
+// .hex:nth-child(10n + 1),
+// .hex:nth-child(10n + 2),
+// .hex:nth-child(10n + 3),
+// .hex:nth-child(10n + 6),
+// .hex:nth-child(10n + 7),
+// .hex:nth-child(10n + 8) {
+//   max-width: calc(33.33% - 1rem);
+// }
+
+// .hex:nth-child(10n + 4),
+// .hex:nth-child(10n + 5),
+// .hex:nth-child(10n + 9),
+// .hex:nth-child(10n + 10) {
+//   max-width: calc(34% - 1rem);
+// }
+
+// /* первый ряд ровный */
+// .hex:nth-child(1),
+// .hex:nth-child(2),
+// .hex:nth-child(3) {
+//   margin-top: 0;
+// }
+
+// @include media-breakpoint-down(md) {
+//   .hex {
+//     /* по две плитки в ряд */
+//     flex: 0 50%;
+//     max-width: calc(50% - 1rem) !important;
+//     margin-top: 0 !important;
+//   }
+
+//   .hex:nth-child(3n) {
+//     /* каждый третий становится «целой» строкой */
+//     max-width: 50.1% !important;
+//     flex: 100%;
+//     margin-top: -5rem !important;
+//   }
+// }
 /* Hexagons */
 #hexGrid {
-  padding: 0.866% 0;
   width: 100%;
-  @include media-breakpoint-only(md) {
-    width: 46.25rem;
-  }
-  @include media-breakpoint-only(xl) {
-    width: 46.25rem;
-  }
-  @include media-breakpoint-only(lg) {
-    width: 46.25rem;
-  }
-  @include media-breakpoint-down(md) {
-    width: 100%;
-    margin-bottom: -270%;
-    overflow: hidden;
-  }
+  max-width: 49rem;
 }
-
 #hexGrid:after {
   content: "";
   display: block;
@@ -30,102 +157,65 @@
 }
 
 .hexIn {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   text-align: center;
   overflow: hidden;
   transform: skewY(-30deg) rotate(60deg);
   background-color: var(--color-ice);
-  padding-left: 16px;
-  padding-right: 16px;
-
-  color: var(--color-text);
+  padding: 0 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: var(--color-text);
 }
 
-.hex:nth-child(5n + 1),
-.hex:nth-child(5n + 3),
-.hex:nth-child(5n + 2) {
-  transform: translateX(0%) rotate(-60deg) skewY(30deg);
+/* Строки */
+.hex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
 
-  @include media-breakpoint-only(xl) {
-    transform: translateX(1%) rotate(-60deg) skewY(30deg);
-  }
-  @include media-breakpoint-only(lg) {
-    transform: translateX(1%) rotate(-60deg) skewY(30deg);
-  }
-  @include media-breakpoint-only(md) {
-    transform: translateX(1%) rotate(-60deg) skewY(30deg);
-  }
-}
-.hex:nth-child(5n + 4),
-.hex:nth-child(5n + 5) {
-  margin-top: -5.5%;
-  margin-bottom: -5.5%;
-
-  @include media-breakpoint-only(xl) {
-    margin-bottom: -6.5%;
-  }
-  @include media-breakpoint-only(lg) {
-    margin-bottom: -6.5%;
-  }
-  @include media-breakpoint-only(md) {
-    margin-bottom: -6.5%;
-  }
   @include media-breakpoint-down(md) {
-    margin: 0;
+    gap: 1rem;
   }
 }
-.hex:nth-child(5n + 2),
-.hex:nth-child(5n + 4) {
-  margin-right: 16px;
-  margin-left: 16px;
-}
-.hex:nth-child(5n + 1) {
-  margin-left: 0.5%;
+.hex-row + .hex-row {
+  .hex {
+    margin-top: -3.25rem;
+  }
 }
 
-.hex:nth-child(5n + 6) {
-  clear: left;
-}
-
-/// myStyle
+/* Базовые стили плиток */
 .hex {
-  width: 232px; /* = (100-2) / 3 */
-  padding-bottom: 29%; /* =  width / sin(60) */
+  width: 100%;
   position: relative;
-  list-style-type: none;
-  float: left;
+  list-style: none;
   overflow: hidden;
   visibility: hidden;
-  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
-  transform: translateX(50%) rotate(-60deg) skewY(30deg) translatez(-1px);
+  outline: 1px solid transparent;
+  transform: rotate(-60deg) skewY(30deg) translateZ(-1px);
+  aspect-ratio: 224/260;
+  @include media-breakpoint-up(md) {
+    margin-top: -4.4rem;
+  }
 
-  @include media-breakpoint-only(xl) {
-    padding-bottom: 36%;
+  @media (max-width: 440px) {
+    margin-top: -3rem;
   }
-  @include media-breakpoint-only(lg) {
-    padding-bottom: 36%;
+
+  @include media-breakpoint-only(sm) {
+    margin-top: -5.8rem;
   }
-  @include media-breakpoint-only(md) {
-    padding-bottom: 36%;
-    max-width: 15rem;
-  }
-  @include media-breakpoint-down(md) {
-    max-width: 48%;
-    width: 100%;
-    padding-bottom: 56%;
-    margin: 0;
+  @include media-breakpoint-down(sm) {
+    margin-top: -4.4rem;
   }
   p {
     @include media-breakpoint-down(md) {
       font-size: 11px;
-      padding-left: 8px;
-      padding-right: 8px;
+      padding: 0 8px;
       text-overflow: ellipsis;
       overflow: hidden;
       display: -webkit-box;
@@ -136,9 +226,10 @@
 }
 
 .hex__title {
-  font-size: 56px;
   font-family: var(--titleFont);
   margin-bottom: 12px;
+  font-size: 56px;
+
   @include media-breakpoint-down(md) {
     font-size: 16px !important;
     margin-bottom: 6px;
@@ -154,128 +245,68 @@
   font-size: 20px;
 }
 
-// ///////
+.hexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
 
-.hex:first-child {
   @include media-breakpoint-down(md) {
-    transform: translateX(53%) translateY(0%) rotate(-60deg) skewY(30deg) !important;
+    gap: 16px;
   }
 }
+
+.hex:nth-child(10n + 1),
+.hex:nth-child(10n + 2),
+.hex:nth-child(10n + 3),
+.hex:nth-child(10n + 6),
+.hex:nth-child(10n + 7),
+.hex:nth-child(10n + 8) {
+  max-width: calc(33.33% - 1rem);
+}
+
+.hex:nth-child(10n + 4),
+.hex:nth-child(10n + 5),
+.hex:nth-child(10n + 9),
+.hex:nth-child(10n + 10) {
+  max-width: calc(34% - 1rem);
+}
+
+/* первый ряд ровный */
+.hex:nth-child(1),
 .hex:nth-child(2) {
-  @include media-breakpoint-down(md) {
-    margin: 0 !important;
-    transform: translateX(-100%) translateY(80%) rotate(-60deg) skewY(30deg) !important;
-  }
+  margin-top: 0;
 }
-.hex:nth-child(3) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(108%) translateY(-20%) rotate(-60deg) skewY(30deg) !important;
+@include media-breakpoint-up(md) {
+  .hex:nth-child(3) {
+    margin-top: 0;
   }
 }
 
-.hex:nth-child(4) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-44.5%) translateY(60%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(5) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-0%) translateY(39%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(6) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(107%) translateY(-59%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
+/* desktop-адаптивы на чуть более узких экранах */
 
-.hex:nth-child(7) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(45%) translateY(-79%) rotate(-60deg) skewY(30deg) !important;
+/* === Планшет/мобилка (md и ниже): 2-1-2-1-… с одиночками по центру === */
+@include media-breakpoint-down(md) {
+  $gap: 1rem;
+  $ratio: 260 / 224;
+  $w: calc((100% - #{$gap}) / 2);
+
+  .hexGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $gap;
   }
-}
-.hex:nth-child(8) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-0%) translateY(-98%) rotate(-60deg) skewY(30deg) !important;
+
+  .hex {
+    // убираем flex-настройки
+    flex: none !important;
+    width: 100%;
+    max-width: none !important;
   }
-}
-.hex:nth-child(9) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(8%) translateY(-97%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(10) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(55%) translateY(-115%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(11) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-1%) translateY(-133%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(12) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(98%) translateY(-232%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(13) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(54%) translateY(-252%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(14) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-100%) translateY(-171%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(15) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(108%) translateY(-270%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(16) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(52%) translateY(-290%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(17) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-10%) translateY(-310%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(18) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(108%) translateY(-409%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(19) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-47%) translateY(-329%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(20) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(-0%) translateY(-348%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(21) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(108%) translateY(-447%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(22) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(45%) translateY(-466%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(23) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(0%) translateY(-485%) rotate(-60deg) skewY(30deg) !important;
-  }
-}
-.hex:nth-child(24) {
-  @include media-breakpoint-down(md) {
-    transform: translateX(8%) translateY(-485%) rotate(-60deg) skewY(30deg) !important;
+
+  .hex:nth-child(3n) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: #{$w};
   }
 }
